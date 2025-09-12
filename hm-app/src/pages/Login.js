@@ -20,7 +20,7 @@ export default function Login({ onLogin }) {
     const email = data.get('email');
     const password = data.get('password');
 
-    // ✅ Regex validation for email format
+    
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!email) {
@@ -30,8 +30,8 @@ export default function Login({ onLogin }) {
     } else if (!password) {
       alert("Please enter your password");
     } else {
-      onLogin();               // update login state in App.js
-      navigate("/dashboard");  // go to dashboard
+      onLogin();               
+      navigate("/dashboard");  
     }
   };
 
@@ -64,7 +64,7 @@ export default function Login({ onLogin }) {
               id="email"
               label="Email"
               name="email"
-              type="email"   // ✅ Ensures only email input
+              type="email"   
               autoComplete="email"
               autoFocus
             />
