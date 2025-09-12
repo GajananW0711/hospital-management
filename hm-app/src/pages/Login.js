@@ -2,8 +2,6 @@ import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
@@ -22,11 +20,18 @@ export default function Login({ onLogin }) {
     const email = data.get('email');
     const password = data.get('password');
 
-    if (email && password) {
+    // ✅ Regex validation for email format
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!email) {
+      alert("Please enter your email");
+    } else if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address");
+    } else if (!password) {
+      alert("Please enter your password");
+    } else {
       onLogin();               // update login state in App.js
       navigate("/dashboard");  // go to dashboard
-    } else {
-      alert("Please enter email and password");
     }
   };
 
@@ -59,6 +64,7 @@ export default function Login({ onLogin }) {
               id="email"
               label="Email"
               name="email"
+              type="email"   // ✅ Ensures only email input
               autoComplete="email"
               autoFocus
             />
@@ -71,10 +77,6 @@ export default function Login({ onLogin }) {
               type="password"
               id="password"
               autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
             />
             <Button
               type="submit"
