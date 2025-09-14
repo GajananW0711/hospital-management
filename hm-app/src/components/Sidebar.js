@@ -17,7 +17,7 @@ export default function Sidebar() {
         [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: "border-box" },
       }}
     >
-      {/* 👇 Adds space equal to Navbar(AppBar) height */}
+      {}
       <Toolbar />
 
       <List>

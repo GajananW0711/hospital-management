@@ -25,8 +25,8 @@ export default function Dashboard({ onLogout }) {
 
   // State for patients
   const [patients, setPatients] = useState([
-    { id: 1001, name: "Gajanan Wadje", age: 26, lastScan: "2024-05-18" },
-    { id: 1002, name: "Jayesh Thokal", age: 26, lastScan: "2024-04-22" },
+    { id: 1001, name: "Ashok Zende", age: 26, lastScan: "2024-05-18" },
+    { id: 1002, name: "Ram Gaikwad", age: 26, lastScan: "2024-04-22" },
     { id: 1003, name: "Artish Pawar", age: 24, lastScan: "2024-05-10" },
     { id: 1004, name: "Amol Jadhav", age: 28, lastScan: "2024-05-05" },
     { id: 1005, name: "Snehal Patil", age: 27, lastScan: "2024-04-30" },
@@ -39,7 +39,7 @@ export default function Dashboard({ onLogout }) {
     { id: 1012, name: "Neha Kulkarni", age: 25, lastScan: "2024-05-03" }
   ]);
 
-  // CRUD Handlers
+  
   const handleAdd = () => {
     const id = patients.length ? Math.max(...patients.map(p => p.id)) + 1 : 1001;
     const name = prompt("Enter name:");

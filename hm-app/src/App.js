@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';   // ✅ fix spelling (not Dashbord)
+import Dashboard from './pages/Dashboard';   // 
 import Sidebar from './components/Sidebar';
 import { useNavigate } from 'react-router-dom';
 
